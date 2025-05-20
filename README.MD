@@ -231,5 +231,68 @@ remote:
 To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
  * [new branch]      ft/service-redesign -> ft/service-redesign
 branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/service-redesign)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git add .
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git commit -m "Created a list of the old services"
+[main 6fc9610] Created a list of the old services
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 484 bytes | 161.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
+   c57761b..6fc9610  main -> main
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git branch ft/service-redesign 
+fatal: a branch named 'ft/service-redesign' already exists
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git switch ft/service-redesign 
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/service-redesign)
+$ git merge main
+Auto-merging service.html
+CONFLICT (content): Merge conflict in service.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/service-redesign|MERGING)
+$
+ *  History restored 
+
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/service-redesign|MERGING)
+$ git add .
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/service-redesign|MERGING)
+$ git commit -m "Merging"
+[ft/service-redesign bf4fe27] Merging
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/service-redesign)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 374 bytes | 374.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
+   b1b6c74..bf4fe27  ft/service-redesign -> ft/service-redesign
 
 ```
