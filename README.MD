@@ -386,5 +386,74 @@ To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
 ```
 ### Exercise 2
 ```
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
 
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git switch main
+M       README.MD
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git add --all
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git commit -m "Added the home content"
+[main 9631eed] Added the home content
+ 2 files changed, 318 insertions(+)
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 2.81 KiB | 2.81 MiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
+   6fc9610..9631eed  main -> main
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git switch ft/home-page-redesign 
+Switched to branch 'ft/home-page-redesign'
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git add .
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git commit -m "feat:Redesigned the home page"
+On branch ft/home-page-redesign
+nothing to commit, working tree clean
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git add .
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git commit -m "feat:Re-updated the home page"
+[ft/home-page-redesign 3f197df] feat:Re-updated the home page
+ 1 file changed, 5 insertions(+)
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git push --set-upstream origin ft/home-page-redesign 
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 1.59 KiB | 541.00 KiB/s, done.
+Total 15 (delta 9), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (9/9), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
 ```
