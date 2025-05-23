@@ -388,3 +388,148 @@ To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
 ```
 
 ```
+## Bundle 4
+### Exercise 1
+#### Switching to main
+```
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/home-page-redesign)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+```
+#### Adding another commit repo and commiting changes
+
+```
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git remote add Git-copy https://github.com/AlianeIsimbi/Git-copy.git
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git add .
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git commit -m "Added a new repo"
+[main d620c75] Added a new repo
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ ```
+ #### Pushing changes to both repositories
+
+```
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git push Git-copy
+Enumerating objects: 35, done.
+Counting objects: 100% (35/35), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (35/35), 6.58 KiB | 518.00 KiB/s, done.
+Total 35 (delta 12), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (12/12), done.
+To https://github.com/AlianeIsimbi/Git-copy.git
+ * [new branch]      main -> main
+```
+### Exercise 2
+#### Creating a new branch 'ft/footer' and pushing changes made
+```
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/footer)
+$ git add .
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/footer)
+$ git commit "feat: Added the footer page"
+error: pathspec 'feat: Added the footer page' did not match any file(s) known to git
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/footer)
+$ git commit -m "feat: Added the footer page"
+[ft/footer f8f92f4] feat: Added the footer page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 footer.html
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/footer)
+$  git push --set-upstream origin ft/footer
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 806 bytes | 268.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions/pull/new/ft/footer
+remote:
+To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/footer -> ft/footer
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+```
+#### Going back to main branch and creating a new branch 'ft/squashing'
+
+```
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+brian@AlianeI23 MINGW64 ~/git-exercises (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+```
+#### Merge squashing the changes in the 'ft/footer' branch, commiting and pushing changes
+
+```
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/squashing)
+$ git merge --squash ft/footer
+Updating d620c75..f8f92f4
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 footer.html
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/squashing)
+$ git commit -m "footer changes squashing"
+[ft/squashing 89d118c] footer changes squashing
+ 1 file changed, 11 insertions(+)
+ create mode 100644 footer.html
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/squashing)
+$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+brian@AlianeI23 MINGW64 ~/git-exercises (ft/squashing)
+$ git push --set-upstream origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 449 bytes | 149.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions/pull/new/ft/squashing
+remote:
+To https://github.com/AlianeIsimbi/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+```
